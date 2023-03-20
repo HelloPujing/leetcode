@@ -1,0 +1,18 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug TypeScript",
+            "runtimeArgs": ["-r", "ts-node/register"],
+            "args": ["/Users/pupuu/algorithm/leetcode/013.ts"],
+            "sourceMaps": true, // 在这里启用 sourcemaps
+            "cwd": "/Users/pupuu/algorithm/leetcode"
+        }
+    ]
+}
