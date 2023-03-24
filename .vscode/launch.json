@@ -10,7 +10,7 @@
             "request": "launch",
             "name": "Debug TypeScript",
             "runtimeArgs": ["-r", "ts-node/register"],
-            "args": ["/Users/pupuu/algorithm/leetcode/013.ts"],
+            "args": ["/Users/pupuu/algorithm/leetcode/014.ts"],
             "sourceMaps": true, // 在这里启用 sourcemaps
             "cwd": "/Users/pupuu/algorithm/leetcode"
         }

@@ -1,1 +1,1 @@
-console.log("0123456".charAt(3));
+console.log(Number.MAX_SAFE_INTEGER > 9999);

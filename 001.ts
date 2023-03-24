@@ -32,6 +32,7 @@ function twoSum2(nums: number[], target: number): number[] {
 // 三、查找表法（无需维护顺序，哈希表）
 // 时间复杂度O(n)
 // 空间复杂度O(n)
+// 精华：两次循环变1次，哈希表直取
 function twoSum3(nums: number[], target: number): number[] {
     const map = new Map<number, number>();
 
