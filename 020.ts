@@ -45,26 +45,39 @@ class Stack<T> {
 function isValid2(s: string): boolean {
     if(s.length === 0 || s.length % 2 !== 0) return false;
 
+    let p = 0;
     const stack = new Stack<string>();
     const brackets = new Map([['(', ')'],['{', '}'],['[', ']']]);
 
-    const arr = s.split('');
-
-    for (const v of arr) {
+    while(p < s.length){
+        var v = s.charAt(p);
         if(brackets.has(v)){
             stack.push(v);
         }else{
             const popV = stack.pop();
+            if(!popV) return false;
+
             const expect = brackets.get(popV!)
             if(v !== expect) return false;
         }
+        p++;
     }
 
-    if(stack.size() !== 0) return false;
-
-    return true;
+    return stack.size() === 0;
 };
 
+// 很慢
+// for (const v of s) {
+//     if(brackets.has(v)){
+//         stack.push(v);
+//     }else{
+//         const popV = stack.pop();
+//         if(!popV) return false;
+
+//         const expect = brackets.get(popV!)
+//         if(v !== expect) return false;
+//     }
+// }
 
 const isValid = isValid2;
 console.log(isValid('()')) // true
