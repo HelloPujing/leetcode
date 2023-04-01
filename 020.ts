@@ -20,28 +20,7 @@ function isValid1(s: string): boolean {
 时间复杂度：O(n)
 空间复杂度：O(n) 
 */
-class Stack<T> {
-    private items: T[];
-    constructor() {
-        this.items = [];
-    }
-    push(item: T){
-        this.items.push(item);
-    }
-    pop(): T | undefined{
-        return this.items.pop();
-    }
-    peek(): T | undefined{
-        const len = this.items.length;
-        return len ? this.items[len-1] : undefined;
-    }
-    isEmpty(): boolean{
-        return this.items.length === 0;
-    }
-    size(): number{
-        return this.items.length;
-    }
-}
+import { Stack } from "./type/stack";
 function isValid2(s: string): boolean {
     if(s.length === 0 || s.length % 2 !== 0) return false;
 
