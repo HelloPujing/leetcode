@@ -1,1 +1,2 @@
-console.log(Number.MAX_SAFE_INTEGER > 9999);
+console.log(1 + 1);
+console.log(1 + 1);
