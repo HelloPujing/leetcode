@@ -14,7 +14,7 @@ function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | nul
         if(!preNode){
             l = preNode = currentNode;
         }else{
-            preNode.next = currentNode
+            preNode.next = currentNode;
         }
 
         // reset
