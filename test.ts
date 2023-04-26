@@ -1,5 +1,9 @@
-console.log(3 % 7);
-
+// console.log(1 ^ 999);
+// console.log(0 ^ 999);
+// console.log(999 ^ 999);
+console.log(1 ^ 2 ^ 3);
+console.log(1 ^ 2 ^ 3 ^ 4);
+console.log(1 ^ 2 ^ 3 ^ 4 ^ 4);
 
 
 /* 数组 */
