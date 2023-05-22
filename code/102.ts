@@ -4,7 +4,7 @@
 逐层，BFS，队列实现
 */
 
-import { TreeNode } from "./type/treeNode";
+import { TreeNode } from "../type/treeNode";
 
 function levelOrder(root: TreeNode<number> | null): number[][] {
     
