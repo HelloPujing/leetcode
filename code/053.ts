@@ -88,10 +88,10 @@ function maxSubArray3(nums: number[]): number {
     let biggest = -Infinity;
 
 
-    for (let j = 0; j < nums.length; j++) {
-        preBiggest = Math.max(preBiggest + nums[j], nums[j]);
+    nums.forEach((v) => {
+        preBiggest = Math.max(preBiggest + v, v);
         biggest = Math.max(biggest, preBiggest);
-    }
+    })
 
     return biggest;
 };
