@@ -6,8 +6,8 @@
     方法三：递归
 */
 
-import { ListNode } from "./type/listNode";
-import { Stack } from "./type/stack";
+import { ListNode } from "../type/listNode";
+import { Stack } from "../type/stack";
 
 function reverseList1(head: ListNode | null): ListNode | null {
     if(!head) return head;
