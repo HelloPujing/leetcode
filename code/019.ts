@@ -11,7 +11,7 @@ O(1)
 
 */
 
-import { ListNode } from "./type/listNode";
+import { ListNode } from "../type/listNode";
 
 
 function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
