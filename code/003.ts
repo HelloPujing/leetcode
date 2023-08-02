@@ -7,7 +7,7 @@
 
 function lengthOfLongestSubstring(s: string): number {
     const len = s.length;
-    if(len === 0) return 0;
+    if (len === 0) return 0;
 
     let max = 1;
     let window = new Set(s.charAt(0));
@@ -18,11 +18,11 @@ function lengthOfLongestSubstring(s: string): number {
             window.add(s.charAt(end));
             end++;
         }
-        
+
         max = Math.max(max, window.size)
 
         window.delete(s.charAt(start));
-        if(end === start) end++;
+        if (end === start) end++;
     }
 
     return max;

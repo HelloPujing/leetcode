@@ -18,3 +18,4 @@ function inorderTraversal(root: TreeNode<number> | null): number[] {
     inOrder(root);
     return ans;
 };
+
