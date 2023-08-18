@@ -4,23 +4,23 @@ O(m+n) O(26)
 */
 
 function isAnagram(s: string, t: string): boolean {
-    if(s.length !== t.length) return false;
+    if (s.length !== t.length) return false;
 
     const map = new Map();
     for (const v of s) {
-        if(map.has(v)){
+        if (map.has(v)) {
             map.set(v, map.get(v) + 1);
-        }else{
+        } else {
             map.set(v, 1);
         }
     }
 
     for (const v of t) {
-        if(map.has(v)){
+        if (map.has(v)) {
             const n = map.get(v);
-            if(n > 1) map.set(v, map.get(v) - 1)
-            if(n === 1) map.delete(v);
-        }else{
+            if (n > 1) map.set(v, map.get(v) - 1)
+            if (n === 1) map.delete(v);
+        } else {
             return false;
         }
     }

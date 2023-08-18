@@ -1,4 +1,5 @@
-import { ListNode } from "./type/listNode"
+import { ListNode } from "../type/listNode";
+
 let carry = 0;
 
 function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | null {
@@ -6,20 +7,20 @@ function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | nul
     let preNode = null;
     let carry = 0;
 
-    while(l1 || l2 || carry) {
+    while (l1 || l2 || carry) {
         const n = (l1?.val || 0) + (l2?.val || 0) + carry;
         const v = n % 10;
 
         const currentNode = new ListNode(v);
-        if(!preNode){
+        if (!preNode) {
             l = preNode = currentNode;
-        }else{
+        } else {
             preNode.next = currentNode;
         }
 
         // reset
-        if(l1) l1 = l1.next;
-        if(l2) l2 = l2.next;
+        if (l1) l1 = l1.next;
+        if (l2) l2 = l2.next;
         preNode = currentNode;
         carry = Math.floor(n / 10);
     }

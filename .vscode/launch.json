@@ -7,11 +7,9 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Debug TypeScript",
-            "runtimeArgs": ["-r", "ts-node/register"],
-            "args": ["/Users/pupuu/algorithm/leetcode/217.ts"],
-            "sourceMaps": true, // 在这里启用 sourcemaps
-            "cwd": "/Users/pupuu/algorithm/leetcode"
+            "name": "debug ts",
+            "program": "${workspaceFolder}/code/200.ts",
+            "runtimeExecutable": "/Users/pupuu/.nvm/versions/node/v18.16.1/bin/node" // 不用最新的node，ts-node就报错
         }
     ]
 }
