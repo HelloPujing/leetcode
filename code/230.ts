@@ -5,7 +5,9 @@
 
 
 思考：
-- 遍历二叉树 + 排序？（存k长度的排序数组，如果小于最后一个数，插入）
+- 二叉树，二叉搜索树，是一个意思，左边子树的所有节点比根节点小，右边子树的所有节点比根节点大
+- 中序遍历二叉树，让它从小到大排序排序
+- 取第k个元素
 
 
 */
@@ -14,6 +16,22 @@ import { TreeNode } from "../type/treeNode";
 
 function kthSmallest(root: TreeNode<number> | null, k: number): number {
     let min = -1;
+    const q: number[] = [];
 
-    return min
+    const dfs = (root: TreeNode<number> | null) => {
+        if (!root) return;
+
+        if (q.length === k) {
+            return;
+        } else {
+            dfs(root.left);
+            q.push(root.val);
+            dfs(root.right);
+        }
+    }
+
+    dfs(root);
+
+    return q[k - 1]
 };
+
