@@ -32,6 +32,6 @@ function kthSmallest(root: TreeNode<number> | null, k: number): number {
 
     dfs(root);
 
-    return q[k - 1]
+    return q[k - 1];
 };
 
