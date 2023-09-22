@@ -16,26 +16,69 @@
 输入：nums = [], target = 0
 输出：[-1,-1]
 
-nums 是一个非递减数组
+nums 是一个非递减数组（递增可相等）
+
+思路：
+1. 二分找到target，如果找不到，返回-1 -1
+2. 分别左二分找边界，右二分找边界
+3. 找到那个左边不是target，i是target的index
 */
 
 function searchRange(nums: number[], target: number): number[] {
-    if (nums.length === 0) return [-1, -1];
+    // 寻找target
+    let targetIndex = -1;
+    let L = 0, R = nums.length - 1;
 
-    let
-        L = 0, R = nums.length - 1,
-        targetI = -1, targetJ = -1;
-
-    // 查找target
-    while (L < R) {
-
+    while (L <= R) {
+        const mid = ((R - L) >> 1) + L;
+        if (nums[mid] === target) {
+            targetIndex = mid;
+            break;
+        }
+        if (nums[mid] > target) R = mid - 1;
+        if (nums[mid] < target) L = mid + 1;
     }
 
+    // console.log(targetIndex)
+    if (targetIndex === -1) return [-1, -1];
+
+    // 寻找左边界
+    let ansL = -1;
+    L = 0, R = targetIndex;
+    while (L <= R) {
+        const mid = ((R - L) >> 1) + L;
+        // console.log(L, R, mid)
+
+        if (nums[mid] === target && nums[mid - 1] !== target) {
+            ansL = mid;
+            break;
+        }
+        if (nums[mid] === target) R = mid;
+        if (nums[mid] < target) L = mid + 1;
+    }
+    // console.log(ansL)
 
 
+    // 寻找右边界
+    let ansR = -1;
+    L = targetIndex, R = nums.length - 1;
+    while (L <= R) {
+        const mid = ((R - L) >> 1) + L;
+        // console.log(L, R, mid)
+        if (nums[mid] === target && nums[mid + 1] !== target) {
+            ansR = mid;
+            break;
+        }
+        if (nums[mid] === target) L = mid;
+        if (nums[mid] > target) R = mid;
+    }
+    // console.log(ansR);
 
-    // 二分查找不熟悉，先做简单题
-    // 704 35
-
-
+    return [ansL, ansR];
 };
+
+// console.log(searchRange([5, 7, 7, 8, 8, 10], 6))
+// console.log(searchRange([], 0))
+console.log(searchRange([1, 2, 3, 3, 3, 3, 4, 5, 9], 3))
+console.log(searchRange([2, 2], 2))
+console.log(searchRange([1, 2, 3, 3, 3, 3, 4, 5, 9], 3))
