@@ -30,18 +30,15 @@ function trailingZeroes(n: number): number {
         let n_ = n;
         while (n_ % 2 === 0) {
             count2++;
-            n_ /= 2;
+            n_ = n_ >> 1;
         }
         while (n_ % 5 === 0) {
             count5++;
             n_ /= 5;
         }
-        // console.log(n, count2, count5)
-
         n--;
     }
 
-    // console.log(count2, count5)
     return Math.min(count2, count5);
 };
 
