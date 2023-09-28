@@ -20,6 +20,9 @@
 
 分析：
 注意，如果直接相乘的话，会超过最大数，2的53次方，所以，看质因数，2和5的数量更合适
+
+进阶：
+质因子 555 的个数不会大于质因子 222 的个数！！！
 */
 
 
@@ -40,6 +43,19 @@ function trailingZeroes(n: number): number {
     }
 
     return Math.min(count2, count5);
+};
+
+function trailingZeroes2(n: number): number {
+    let count5 = 0;
+    while (n > 0) {
+        let n_ = n;
+        while (n_ % 5 === 0) {
+            count5++;
+            n_ /= 5;
+        }
+        n--;
+    }
+    return count5;
 };
 
 console.log(trailingZeroes(30))
