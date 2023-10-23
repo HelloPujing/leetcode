@@ -1,14 +1,14 @@
 function plusOne(digits: number[]): number[] {
-     for (let i = digits.length - 1; i >= 0; i--) {
+    for (let i = digits.length - 1; i >= 0; i--) {
         const v = digits[i];
-        if(v === 9) {
+        if (v === 9) {
             digits[i] = 0; // 进位
-        }else{
+        } else {
             digits[i]++;
             return digits;
         }
-     }
+    }
 
-     digits.unshift(1)
-     return digits; // 进位到最后一位
+    digits.unshift(1)
+    return digits; // 进位到最后一位
 };

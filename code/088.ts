@@ -6,10 +6,10 @@ function merge(nums1: number[], m: number, nums2: number[], n: number): void {
         const a = arr1[i];
         const b = nums2[j];
 
-        if(j === n || a <= b){
+        if (j === n || a <= b) {
             nums1[index] = a;
             i++;
-        } else if(i === m || a > b){
+        } else if (i === m || a > b) {
             nums1[index] = b;
             j++;
         }
@@ -22,10 +22,10 @@ function merge2(nums1: number[], m: number, nums2: number[], n: number): void {
         const a = nums1[i];
         const b = nums2[j];
 
-        if(j === -1 || a >= b) {
+        if (j === -1 || a >= b) {
             nums1[index] = a;
             i--;
-        }else if(i === -1 || b > a){
+        } else if (i === -1 || b > a) {
             nums1[index] = b;
             j--;
         }
@@ -33,4 +33,4 @@ function merge2(nums1: number[], m: number, nums2: number[], n: number): void {
     }
 };
 
-merge2([1,2,3,0,0,0], 3, [2,5,6], 3);
+merge2([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3);
